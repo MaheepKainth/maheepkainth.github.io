@@ -1,0 +1,329 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #000000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#nav {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin-right: 10%;
+  gap: 50px;
+}
+
+#nav a {
+  text-decoration: none;
+  padding: 0.5em;
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: rgb(243, 234, 255); /* purple-y white */
+  transition: font-size 0.5s ease, color 0.5s ease;
+}
+
+#nav a:hover {
+  font-size: 1.9em;
+  color: rgb(194, 182, 208);
+}
+
+#hero {
+  z-index: 0;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(225deg, #003366, #000033, #330066, #4b0f4e);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease-in-out infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#hero h1,
+#hero h2,
+#hero p,
+#hero img {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(
+    -50%
+  ); /* Moves it -50% on its x by half of its own width to center it properly, not the top left corner*/
+  color: white;
+  font-size: 3em;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+h1,h2  {
+  min-width: max-content;
+}
+
+#hero h2 {
+  font-weight: normal;
+  margin-top: -3px;
+  top: 30%;
+  font-size: 2.5em;
+  left: 50%;
+}
+span.italic {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+#hero p {
+  top: 40%;
+  font-size: 2em;
+  text-align: center;
+}
+
+#hero img {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 5vw;
+  border-radius: 50%;
+  border: solid white 5px;
+  transform: translate(
+    -50%
+  );
+  transition: width 0.3s ease; 
+}
+
+#hero img:hover {
+  width: 10vw;
+}
+
+hr {
+  width: 100vw;
+  height: 22px;  
+  background-color: #fff;
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease-in-out infinite;
+}
+#languages {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(225deg, #000d1a, #4f004d, #330066, #4f004d, #2e0033, #0d001a);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease-in-out infinite;
+}
+
+.grid-container {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  height: 75vh;
+  width: 80vw;
+  margin: auto auto;
+}
+
+#languages img, figure {
+  width: 10vw;
+  margin: auto auto;
+  transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+  margin-bottom: 50px;
+}
+
+#languages h2, #projects h2  {
+  padding: 50px; 
+  font-weight: normal;
+  font-size: 3.5em;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+#languages code {
+  z-index: 1;
+  font-size: 1.1em;
+  background: -webkit-linear-gradient(225deg, #000d1a, #4f004d, #330066, #4f004d, #2e0033, #0d001a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease-in-out infinite;
+  border-radius: 10px;
+  padding: 5px;
+  position: relative;
+  transition: font-size 0.3s ease, margin 0.3s ease;
+}
+
+code::after {
+  z-index: -2;
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 0; 
+  width: 120px;  
+  height: 60px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  transition: padding 0.3s ease, top 0.3s ease;
+}
+
+#languages h2 code:hover::after {
+  padding: 10px;
+  top: 0px;
+}
+
+#languages h2 code:hover {
+  margin: auto 10px;
+  font-size: 1.3em;
+}
+
+#languages .tech-img:hover{
+  width: 9vw;
+  font-size: 2em;
+  margin-bottom: 0px;
+}
+
+#languages figure.hovered {
+  padding: 20px 10px;
+  font-size: 2em; 
+  background-color: #00000057;
+  border-radius: 10px;
+}
+
+figure {
+  color: white;
+  font-size: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+}
+
+html #projects {
+  text-align: center;
+  width: 100vw;
+  height: 290vh;
+  background-image: linear-gradient(45deg, #000b14, #0d1a25, #003079, #3c274f, #510f77, #1f0e52);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease-in-out infinite;
+}
+
+#projects h2 {
+  padding-bottom: 150px;
+}
+
+.grid-container-projects {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  margin-bottom: 10em;
+}
+
+.project {
+  border-radius: 100px;
+  overflow: hidden;
+  width: 60vw;
+  margin: auto;
+  position: relative;
+}
+
+#projects .hover-project::after {
+  border-radius: 100px;
+  z-index: 0;
+  content: "";
+  position: absolute;
+  width: 100%;              
+  height: 99%;             
+  top: 0;                   
+  left: 0;               
+  background-color: #000000ae;
+}
+
+#projects img  {
+  border-radius: 100px;
+  width: 100%; 
+  object-fit: cover;
+}
+
+#projects .hover-project {
+  transform: scale(1.2);
+  transition: all 0.4s ease;
+}
+
+#projects .img-enlargener {
+  transform: scale(1);
+  transition: all 0.4s ease;
+}
+
+#projects .hover-project:hover {
+  transform: scale(1.2); 
+}
+
+.project p {
+  opacity: 0;
+  position: absolute;
+  top: 100px;
+  left: 120px;
+  right: 350px;
+  color: rgb(255, 255, 255);
+  z-index: 2;
+  text-align: left;
+  transition: all 0.1s ease;
+}
+
+.project .visible {
+  opacity: 100%;
+  transition: all 0.5s ease;
+}
+
+.project p .title {
+   font-size: 2em;
+   font-weight: bold;
+}
+
+.project p .languages {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: -10px;
+}
+
+#footer {
+  text-align: center;
+  width: 100vw;
+  height: 150vh;
+  background-image: linear-gradient(225deg, #000b14, #0d1a25, #003079, #3c274f, #510f77, #1f0e52);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease-in-out infinite;
+}
+
+footer {
+  text-align: center;
+  padding-top: 4em;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.m {
+  padding-top: 50px;
+  width: 10vw;
+  height: auto;
+}
